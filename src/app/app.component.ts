@@ -13,27 +13,19 @@ import { slider, stepper } from './animations';
 })
 export class AppComponent {
   title = 'ChatApp';
-  messages : Message[];
   constructor (private config : PrimeNGConfig, private commService : CommunicationService, private router : Router) {}
 
   ngOnInit() {
     this.config.ripple = true;
     
-    this.commService.online().subscribe({
+    this.commService.tryLogin().subscribe({
       next : data => {
-        this.commService.tryLogin().subscribe({
-          next : data => {
-            this.commService.importUser();
-            this.commService.initiateUser();
-            this.router.navigate(['/', 'profile'])
-          },
-          error : error => this.router.navigate(['/', 'home', 'welcome']),
-        });
+        this.commService.importUser();
+        this.commService.initiateUser();
+        this.router.navigate(['/', 'profile'])
       },
-      error : error => this.messages = [
-        { severity: 'error', summary: 'Uh Oh!', detail: 'Due to resource limitations, the server seems to be down temporarily, and will be up and running in a few seconds. Kindly refresh the site' },
-      ]
-    })
+      error : error => this.router.navigate(['/', 'home', 'welcome'], {queryParams : {serverOffline : error.status !== 401}}),
+    });
     
   }
 

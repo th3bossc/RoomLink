@@ -1,5 +1,4 @@
 <div class="container">
-    <p-messages [(value)]="messages" [enableService]="false" [closable]="true"></p-messages>
     <div [@routeAnimations]="prepareRoute(outlet)" class="route">
         <router-outlet #outlet="outlet"></router-outlet>
     </div>
