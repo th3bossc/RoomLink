@@ -1,0 +1,23 @@
+<div class="container">
+    <h1 style="--animation-delay: 0;"> Welcome Back! </h1>
+    <p-messages [(value)]="messages" [enableService]="false" [closable]="true"></p-messages>
+    <div class="form-data">
+        <form class="login-form" style="--animation-delay: 3;" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon">
+                    <i class="pi pi-user"></i>
+                </span>
+                <input pInputText placeholder="Username" formControlName="username" />
+            </div>
+            <p-password formControlName="password" type="password" class="w-full" [feedback]="false" placeholder="Password" styleClass="p-password p-component p-inputwrapper p-input-icon-right" [style]="{'width':'100%'}" [inputStyle]="{'width':'100%'}" [toggleMask]="true"></p-password>
+            <p-button type="submit" styleClass="p-button-success" label="Submit" [loading]="loading" [disabled]="loginForm.invalid"></p-button>
+        </form>
+    </div>
+    <hr width="100px">
+    <div class="route" style="--animation-delay : 5;">
+        Don't have an account? 
+        <a [routerLink]="['/', 'home', 'register']">
+            Sign Up!
+        </a>
+    </div>
+</div>  

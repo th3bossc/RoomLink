@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="chats">
+        <nav class="navbar">
+            <img src="../../assets/backgrounds/logo.png" class="image">
+            <h2> RoomLink </h2>
+        </nav>
+        <div class="create-new-group">
+            <app-room></app-room>
+        </div>
+        <div class="previous-chats">
+            <h3> Recently visited </h3>
+            <a pRipple class="room" *ngFor="let room of rooms; let i = index" (click)="gotoRoom(i)"> {{room.name}} </a>
+            <h4 *ngIf="!rooms"> --- No rooms found ---</h4>
+        </div>
+        <div class="log-out">
+            <p-button label="Log Out" icon="pi pi-sign-out" styleClass="p-button-text p-button-info" (onClick)="logout()"></p-button>
+        </div>
+    </div>
+    <div class="current-chat"  [@openChat]="(smallDisplay && !chatVisible) ? 'close' : 'open'">
+        <app-chat (goBack)="viewAllChats($event)" (deleteCurrentRoom)="roomDeleted($event)"></app-chat>
+</div>

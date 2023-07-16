@@ -1,0 +1,10 @@
+<div class="container">
+    <form class="room-form" [formGroup]="roomForm">
+        <input type="text" pInputText placeholder="Keyword" formControlName="roomName"/>
+        <div class="buttons">
+            <p-button type="submit" icon="pi pi-plus" label="Create room" styleClass="p-button-help p-button-text" [disabled]="roomForm.invalid" (onClick)="onSubmit('create')"></p-button>
+            <p-button type="submit" icon="pi pi-minus" label="Join room" styleClass="p-button-secondary p-button-text" [disabled]="roomForm.invalid" (onClick)="onSubmit('join')"></p-button>
+        </div>
+    </form>
+    <p-messages [(value)]="messages" [enableService]="false" [closable]="true"></p-messages>
+</div>

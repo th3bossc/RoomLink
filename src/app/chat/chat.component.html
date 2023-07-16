@@ -1,0 +1,46 @@
+<div class="container" *ngIf="room">
+    <div class="chat-window">
+        <div class="title">
+            <p-button icon="pi pi-chevron-left" styleClass="p-button-text p-button-warning"(onClick)="goToAllChats()"></p-button>
+            <h2> {{room}} </h2>
+        </div>
+        <div class="messages" #messageWindow>
+            <div *ngFor="let message of messages" [class]="message.sender.username === username ? 'me' : 'server'">
+                <small> {{message.sender.username === username ? 'You' : message.sender.username }} </small>
+                {{message.content}}
+                <small> {{message.time | date : "HH:mm"}} <i class="pi pi-check" style="font-size : 0.6rem;"></i> </small>
+            </div>
+        </div>
+        <div class="new-message">
+            <form [formGroup]="inputForm" (ngSubmit)="onSubmit()">
+                <div class="p-inputgroup">
+                    <input type="text" pInputText placeholder="Keyword" formControlName="input" />
+                    <button type="submit" pButton icon="pi pi-send" styleClass="p-button-warn" [disabled]="inputForm.invalid"></button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="room-info">
+        <div class="title">
+            <h2> {{room}} </h2>
+        </div>
+        <div class="users">
+            <h5>
+                All users
+            </h5>
+            <div *ngFor="let user of users">
+                <p-tag [severity]="user.online ? 'success' : 'danger'" [value]="user.online ? 'online' : 'offline'"></p-tag>
+                <span> {{user.username}} </span>
+            </div>
+        </div>
+        <div class="delete-group">
+            <p-button label="Delete chat permenantly" icon="pi pi-trash" styleClass="p-button-danger p-button-text" (onClick)="deleteRoom($event)"></p-button>
+            <p-confirmPopup></p-confirmPopup>
+            <p-toast></p-toast>
+        </div>
+    </div>
+</div>
+<div class="join-any-room" *ngIf="!room">
+    <i class="pi pi-info-circle" style="font-size : 5rem;"></i>
+    <h2> Create or join a new chat to continue</h2>
+</div>

@@ -1,0 +1,12 @@
+.container {
+    .room-form {
+        width : 100%;
+        display : flex;
+        flex-direction: column;
+        gap : 10px;
+        .buttons {
+            display : flex;
+            justify-content : space-between
+        }
+    }
+}

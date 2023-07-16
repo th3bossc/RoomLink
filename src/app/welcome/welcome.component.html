@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="title">
+        <img src="../../assets/backgrounds/logo.png" class="image"/>
+        <h1> RoomLink </h1>
+    </div>
+    <div class="basic-info">
+        <p>
+            RoomLink is a simple chat service that allows users from all over the world to seemlessly talk to one another real-time. 
+        </p>
+        <p>
+            The service is still in development stages and any suggestions and/or critiques are appreciated
+        </p>
+    </div>
+    <div class="links">
+        <p-button label="log In" [routerLink]="['/', 'home', 'login']" styleClass="p-button-text p-button-success"></p-button>
+        <p-button label="Sign In" [routerLink]="['/', 'home', 'register']" styleClass="p-button-text p-button-danger"></p-button>        
+    </div>
+    <hr>
+    <footer class="footer">
+        Made by @Diljith Dileep
+        <p-toolbar>
+            <div class="p-toolbar-group-start">
+            </div>
+            <div class="p-toolbar-group-center">
+                <p-button icon="pi pi-github" styleClass="p-button-text p-button-plain"></p-button>
+                <p-button icon="pi pi-linkedin" styleClass="p-button-text p-button-info"></p-button>
+                <p-button icon="pi pi-user" styleClass="p-button-text p-button-help"></p-button>
+            </div>
+            <div class="p-toolbar-group-end">
+            </div>
+        </p-toolbar>
+    </footer>
+</div>
