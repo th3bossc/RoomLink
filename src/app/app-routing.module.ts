@@ -12,9 +12,9 @@ const routes: Routes = [
   {path : '', redirectTo : 'home/welcome', pathMatch : 'full'},
   {path : 'home', component : HomeComponent, children : [
     {path : 'welcome', component : WelcomeComponent},
-    {path : 'login', component : LoginComponent},
-    {path : 'register', component : RegisterComponent},
-  ]},
+    {path : 'login', component : LoginComponent, data : { animation : 'isLeft' }},
+    {path : 'register', component : RegisterComponent, data : { animation : 'isRight' }},
+  ], data : {animation : 'dont'}},
   {path : 'profile', component : LandingComponent, canActivate : [AuthService], data : {animation : 'appear'}},
 ];
 

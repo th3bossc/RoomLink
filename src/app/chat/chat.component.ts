@@ -50,7 +50,7 @@ export class ChatComponent {
 
     this.commService.socket.on('user-connected', () => this.updateUserList());
     this.commService.socket.on('user-disconnected', () => this.updateUserList());
-    this.commService.socket.on('incoming-message', () => this.updateMessageHistory());
+    this.commService.socket.on('incoming-message', (newMessage) => this.messages.push(newMessage));
     this.commService.socket.on('current-room-deleted', () => {
       this.messageService.add({ severity : 'success', summary : 'Accepted', detail : 'Room deleted successfully'});
       this.deleteCurrentRoom.emit(true);

@@ -40,6 +40,8 @@ export class CommunicationService {
     this.headers = null;
     localStorage.removeItem('username');
     localStorage.removeItem('accessToken');
+    this.socket.disconnect();
+    this.socket.connect();
     this.router.navigate(['/']);
   }
 

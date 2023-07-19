@@ -50,6 +50,7 @@ export class RoomComponent {
         },
       })
     }
+    this.roomForm.reset();
   }
 
   next(data, roomName) {

@@ -89,22 +89,22 @@ export const stepper =
           position: 'absolute',
           left: 0,
           width: '100%',
+          overflow : 'hidden',
         }),
       ]),
       group([
         query(':enter', [
           animate('600ms ease', keyframes([
-            style({ opacity : 0, transform: 'scale(0.7)' }),
-            style({ opacity : 1, transform: 'scale(1)' }),
+            style({ opacity : 0, transform: 'scale(0.7)', overflow : 'hidden' }),
+            style({ opacity : 1, transform: 'scale(1)', overflow : 'hidden' }),
           ])),
         ]),
         query(':leave', [
           animate('600ms ease', keyframes([
-            style({ transform: 'scale(1)' }),
-            style({ opacity: 0, transform: 'scale(1.42)' }),
+            style({ transform: 'scale(1)', overflow : 'hidden' }),
+            style({ opacity: 0, transform: 'scale(1.42)', overflow : 'hidden' }),
           ])),
         ])
       ]),
     ])
-
 ]);
