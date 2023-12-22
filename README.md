@@ -1,27 +1,67 @@
-# ChatApp
+# RoomLink - Frontend
+This is the source code for the frontend of the RoomLink project, which is a real time chat application built using the MEAN stack
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.2.
+## Table of contents
 
-## Development server
+- [Overview](#overview)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [Useful resources](#useful-resources)
+- [Installation](#installation)
+- [Author](#author)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Overview
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### The challenge
 
-## Build
+Users should be able to:
+  - Login with their user credentials
+  - Create a new room / Join an existing room
+  - Delete a room they're a part of
+  - View users who are currently online
+  - Send and recieve messages instantaniously
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## My process
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Built with
 
-## Running end-to-end tests
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- [AngularJS](https://angular.io/) - JS library
+- [Sass](https://sass-lang.com) - CSS Preprocessor
+- [PrimeNg Components](https://primeng.org/) - For styles
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+### Useful resources
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- [Angular Documentation](https://angular.io/docs) - Angular documentation helped me a lot when working with projects, and needed to know how a specific feature was used, and the best way to use it.
+
+## Installation 
+
+1. Clone the repo
+  ```bash
+    git clone https://github.com/th3bossc/RoomLink.git
+  ```
+ 
+2. Change directory and install dependencies
+  ```bash
+    cd RoomLink
+    npm install
+  ```
+
+3. Set environment variables
+    
+4. Run the server
+
+  ```bash
+    ng serve
+  ```
+
+5. The server should now be hosted at http://localhost:4200
+## Author
+
+- Website - [Diljith P D](https://th3bossc.github.io/Portfolio)
